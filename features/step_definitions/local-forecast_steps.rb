@@ -15,12 +15,6 @@ Given(/^The Local Forecast video thumbnail exists$/) do
 	expect(page).to have_css('.video-container')
 end
 
-When(/^I click the Video thumbnail$/) do
-	@page_element = find('.video-container a')
-	$expected_url = @page_element[:href]
-	@page_element.click
-end
-
 Then(/^The Local Forecast asset page displays$/) do
 	expect(current_url).to match $expected_url
 end
