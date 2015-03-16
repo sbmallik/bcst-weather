@@ -1,9 +1,22 @@
+Given(/^I am visiting the "(.*?)" module showcase page$/) do | module_name |
+	visit ui_url("/module-showcase/#{module_name.downcase.tr(' ', '-')}/")
+	wait_for_pageload
+end
+
+Given(/^I am viewing the Module Showcase page$/) do
+	expect(page).to have_selector(:id, 'showcase-modules')
+end 
+
 Then(/^I should see the Right Now Weather module$/) do
 	expect(page).to have_css('.right-now-weather-module')
 end
 
 Then(/^I should see the Right Now Weather location$/) do
 	expect(page).to have_css('.right-now-weather-location')
+end
+
+Then(/^I should see the Right Now Weather presented AD$/) do
+	expect(page).to have_css('.right-now-weather-presented')
 end
 
 Then(/^I should see "(.*?)" instances of Right Now Weather item$/) do | number_of |
