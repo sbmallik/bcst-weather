@@ -2,11 +2,11 @@
 Feature: Local Forcast module should exist in Weather front for all Broadcast sites. 
 
 Background: 
-	Given I am on the "Weather" front in Broadcast site
+	Given I am visiting the "Weather Station Location" Module Showcase page
 
 @local-forecast-elements
 Scenario:
-	Given I am viewing the "Weather" front 
+	Given I am viewing the Module Showcase page
 	Then I should see the Local Forecast module
 
 @video-thumbnail-link

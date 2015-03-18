@@ -1,4 +1,4 @@
-Given(/^I am visiting the "(.*?)" module showcase page$/) do | module_name |
+Given(/^I am visiting the "(.*?)" Module Showcase page$/) do | module_name |
 	visit ui_url("/module-showcase/#{module_name.downcase.tr(' ', '-')}/")
 	wait_for_pageload
 end

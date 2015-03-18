@@ -2,7 +2,7 @@
 Feature: Verify the 'Right Now Weather' module located in the sidebar
 
 Background: 
-	Given I am visiting the "Right Now Weather" module showcase page
+	Given I am visiting the "Right Now Weather" Module Showcase page
 
 @right-now-weather-elements
 Scenario:
