@@ -1,16 +1,3 @@
-Given(/^I am on the "(.*?)" front in Broadcast site$/) do | front_name |
-	if front_name.downcase == 'home' then
-		visit ui_url("/")
-	else
-		visit ui_url("/#{front_name.downcase}/")
-	end
-	wait_for_pageload
-end
-
-Given(/^I am viewing the "(.*?)" front$/) do | front_name |
-	expect(page).to have_selector(:id, "section_#{front_name.downcase}")
-end
-
 Then(/^I should see the Local Forecast module$/) do
 	expect(page).to have_css('.weather-station-location-module')
 end
