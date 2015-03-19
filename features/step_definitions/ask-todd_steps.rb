@@ -6,9 +6,11 @@ Given(/^The Ask Todd a question module exists$/) do
 	expect(page).to have_css('.generic-iframe-title')
 end
 
-When(/^I enter "(.*?)" in "(.*?)" field$/) do | input, name |
+When(/^I enter the form data as below:$/) do | table |
 	locate_iframe_elements do
-		fill_in(name, with: input)
+                table.hashes .each do | hsh |
+                        fill_in(hsh['field'], with: hsh['input'])
+                end
 	end
 end
 

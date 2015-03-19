@@ -7,9 +7,11 @@ Background:
 Scenario: Fill up all fields and submit the question. Also check the page response.
 	Given I am viewing the Ask Todd sub section
 		And The Ask Todd a question module exists
-	When I enter "Todd Alston" in "Name" field
-		And I enter "talston@gannett.com" in "E-mail address" field
-		And I enter "McLean, VA" in "City" field
-		And I enter "How does the Alberta Clippers form?" in "Question" field
+	When I enter the form data as below:
+| field | input |
+| Name | Todd Alston |
+| E-mail address | talston@gannett.com |
+| City | McLean, VA |
+| Question | How does the Alberta Clippers form? |
 		And I click the "Submit" button
 	Then I should see the message "Thanks for asking Todd a question! Todd answers questions every Tuesday and Thursday night on Fox 43 10 O'Clock News." on the page
